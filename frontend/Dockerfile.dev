@@ -1,0 +1,19 @@
+# Development Dockerfile
+
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies
+COPY package.json package-lock.json* ./
+RUN npm install
+
+# Copy all files (you can ignore this if bind mounting in docker-compose)
+COPY . .
+
+# Expose Next.js dev server port
+EXPOSE 3000
+
+# Run dev server (with hot reload)
+CMD ["npm", "run", "dev"]
