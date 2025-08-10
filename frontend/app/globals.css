@@ -2,6 +2,12 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@font-face {
+  font-family: "Carter";
+  src: url("/fonts/Carter/Carter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -210,6 +216,19 @@
   margin-bottom: 0.3rem;
   height: auto; 
   margin-right: auto;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 15px;
+  border: 1px solid rgba(180, 179, 179, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 2px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .chat {
@@ -230,3 +249,8 @@
   margin-right: 0;
   padding: 0.5rem;
 }
+
+.font-carter {
+  font-family: "Carter", Georgia, serif;
+}
+

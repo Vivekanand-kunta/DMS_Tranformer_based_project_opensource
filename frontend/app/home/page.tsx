@@ -1,7 +1,8 @@
 'use client';
-import Tables from '@/components/FunctionalComponents/Tables';
+import Tables from '@/components/FunctionalComponents/SingleTable';
 import Search from '@/components/FunctionalComponents/Search';
 import {useState} from 'react';
+import Chat from '@/components/FunctionalComponents/Chat';
 type CellValue = string | number | null;
 
 interface TableData {
@@ -22,16 +23,16 @@ interface chatData {
 export default function Home() {
 
   const [chat_id, setChatId] = useState<number>(0);
-
+  const [chats,setChats]=useState<chatData[]>([]);
   
-
+  
   return (
     <main className="w-[100%] h-[100%] flex  justify-center">
-      <div className="chat glass-card mb-30">
-        
+      <div className="chat glass-card mb-30 min-h-[80vh]">
+      {chats.map((chat)=>(<Chat key={chat.chat_id} chatData={chat} />))}
       </div>
 
-    <Search />
+    <Search setChat={setChats} />
     </main>
   );
 }

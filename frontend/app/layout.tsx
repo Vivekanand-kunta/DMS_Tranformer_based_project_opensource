@@ -27,7 +27,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
         <AppNavigationMenu />
-        <header className="text-center mt-5 text-4xl relative bottom-10 "><h1>DMS</h1></header>
+        <header className="text-center mt-5 text-6xl relative bottom-10 font-carter ">DMS</header>
         {children}
       </body>
     </html>
